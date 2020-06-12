@@ -19,20 +19,20 @@ Find the theme you want to edit, and then click Actions > Edit code.
 In the Sections directory, click product-template.liquid.
 Find the opening HTML <form> tag. It will look similar to this:
 
-<form action="/cart/add" method="post" enctype="multipart/form-data">
+{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
  
 
 Wrap the opening <form> tag in conditional Liquid tags, so that on a new line above it is {% if product.available %}, and on a new line below it is {% endif %}. Your code should look like this:
 
 {% if product.available %}
-<form action="/cart/add" method="post" enctype="multipart/form-data">
+{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
 {% endif %}
  
 
 Find the closing HTML </form> tag. Wrap it in conditional Liquid tags, so that on a new line above it is {% if product.available %}, and on a new line below it is {% endif %}. Your code should look like this:
 
 {% if product.available %}
-</form>
+{% endform %}
 {% endif %}
  
 
@@ -106,20 +106,20 @@ Find the theme you want to edit, and then click Actions > Edit code.
 In the Sections directory, click product-template.liquid.
 Find the opening HTML <form> tag. It will look similar to this:
 
-<form action="/cart/add" method="post" enctype="multipart/form-data">
+{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
  
 
 Wrap the opening <form> tag in conditional Liquid tags, so that on a new line above it is {% if product.available %}, and on a new line below it is {% endif %}. Your code should look like this:
 
 {% if product.available %}
-<form action="/cart/add" method="post" enctype="multipart/form-data">
+{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
 {% endif %}
  
 
 Find the closing HTML </form> tag. Wrap it in conditional Liquid tags, so that on a new line above it is {% if product.available %}, and on a new line below it is {% endif %}. Your code should look like this:
 
 {% if product.available %}
-</form>
+{% endform %}
 {% endif %}
  
 
